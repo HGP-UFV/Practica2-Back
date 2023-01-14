@@ -1,0 +1,30 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT root (data)+>
+<!ATTLIST root
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT data (codigo_geometria,zona_basica_salud,tasa_incidencia_acumulada_P60mas_ultimos_14dias,
+                casos_confirmados_P60mas_ultimos_14dias?,fecha_informe)>
+<!ATTLIST data
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT codigo_geometria (#PCDATA)>
+<!ATTLIST codigo_geometria
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT zona_basica_salud (#PCDATA)>
+<!ATTLIST zona_basica_salud
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT tasa_incidencia_acumulada_P60mas_ultimos_14dias (#PCDATA)>
+<!ATTLIST tasa_incidencia_acumulada_P60mas_ultimos_14dias
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT casos_confirmados_P60mas_ultimos_14dias (#PCDATA)>
+<!ATTLIST casos_confirmados_P60mas_ultimos_14dias
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT fecha_informe (#PCDATA)>
+<!ATTLIST fecha_informe
+    xmlns CDATA #FIXED ''>
