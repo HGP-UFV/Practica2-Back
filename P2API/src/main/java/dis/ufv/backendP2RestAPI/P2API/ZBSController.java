@@ -22,6 +22,8 @@ import java.util.ArrayList;
 @RestController
 public class ZBSController{
 
+    //PRIMER FICHERO
+
     //Para mostrar toda la información del fichero que está entre comillas
     @GetMapping("/centros")
     public ArrayList<ZonaBasicaSalud> centros(){
@@ -47,6 +49,47 @@ public class ZBSController{
         return new ResponseEntity<>(existe, HttpStatus.OK);
 
     }//getPorNombre
+
+
+    //PRIMER FICHERO
+
+
+
+
+
+
+    //SEGUNDO FICHERO
+
+
+    //Para mostrar toda la información del fichero que está entre comillas
+    @GetMapping("/centros")
+    public ArrayList<ZonaBasicaSalud60Mayores> centrosMayores(){
+        ArrayList<ZonaBasicaSalud60Mayores> listaCentrosMayores = new LectorJsonZBS().leerFicheroJson2("src/main/resources/Covid19-TIA_ZonasBásicasSalud_Mayores60.json");
+        return listaCentrosMayores;
+    }//ArrayList centros
+
+
+
+    //Para mostrar centros, según nombre de la Zona
+    @GetMapping("/centros/porNombreZona/{nombreZonaCentro}")
+    public ResponseEntity<ZonaBasicaSalud60Mayores> getPorNombreCentroMayores(@PathVariable String nombreZonaCentro){
+        ArrayList<ZonaBasicaSalud60Mayores> listaCentrosMayores = new LectorJsonZBS().leerFicheroJson2("src/main/resources/Covid19-TIA_ZonasBásicasSalud_Mayores60.json");
+
+        //Comprobamos que existe el centro solicitado
+        ZonaBasicaSalud60Mayores existe = null;
+        for(ZonaBasicaSalud60Mayores centro : listaCentrosMayores){
+            if(centro.getZona_basica_salud().equalsIgnoreCase(nombreZonaCentro)){
+                existe = centro;//Si existe lo recogemos en nuestro objeto que guardará los datos de interés
+            }//if
+        }//for
+
+        return new ResponseEntity<>(existe, HttpStatus.OK);
+
+    }//getPorNombre
+
+    //SEGUNDO FICHERO
+
+
 
 
 }//Class ZBS Controller

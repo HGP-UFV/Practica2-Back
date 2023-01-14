@@ -41,4 +41,23 @@ public class LectorJsonZBS {
         }
     }//leeFicheroJson
 
+
+    public ArrayList <ZonaBasicaSalud60Mayores> leerFicheroJson2(String fichero){
+        try{
+            //Crear una instancia Gson
+            Gson gson = new Gson();
+            //Lee el fichero que le pasamos y lo carga en un reader
+            Reader reader = Files.newBufferedReader(Paths.get(fichero));
+            //Convierte el array JSON a un arraylist de users
+            ArrayList <ZonaBasicaSalud60Mayores> listaCentros = gson.fromJson(reader, new TypeToken<ArrayList<ZonaBasicaSalud>>() {}.getType());
+            reader.close();//Cerramos el reader
+            return listaCentros;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return new ArrayList<>(); //En caso de no leer nada, devuelve un array vacío
+        }
+    }//leeFicheroJson
+
+
+
 }//Class LectorJson
