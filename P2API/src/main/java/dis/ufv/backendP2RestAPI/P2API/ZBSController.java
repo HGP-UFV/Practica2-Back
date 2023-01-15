@@ -62,7 +62,7 @@ public class ZBSController{
 
 
     //Para mostrar toda la información del fichero que está entre comillas
-    @GetMapping("/centros")
+    @GetMapping("/centrosMayores")
     public ArrayList<ZonaBasicaSalud60Mayores> centrosMayores(){
         ArrayList<ZonaBasicaSalud60Mayores> listaCentrosMayores = new LectorJsonZBS().leerFicheroJson2("src/main/resources/Covid19-TIA_ZonasBásicasSalud_Mayores60.json");
         return listaCentrosMayores;
@@ -71,7 +71,7 @@ public class ZBSController{
 
 
     //Para mostrar centros, según nombre de la Zona
-    @GetMapping("/centros/porNombreZona/{nombreZonaCentro}")
+    @GetMapping("/centrosMayores/porNombreZona/{nombreZonaCentro}")
     public ResponseEntity<ZonaBasicaSalud60Mayores> getPorNombreCentroMayores(@PathVariable String nombreZonaCentro){
         ArrayList<ZonaBasicaSalud60Mayores> listaCentrosMayores = new LectorJsonZBS().leerFicheroJson2("src/main/resources/Covid19-TIA_ZonasBásicasSalud_Mayores60.json");
 
