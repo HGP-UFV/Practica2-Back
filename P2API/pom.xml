@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>dis.ufv.backendP2RestAPI</groupId>
 	<artifactId>P2API</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>P2API</name>
 	<description>API REST para la Práctica 2 de Desarrollo e Integración de Software</description>
 	<properties>
